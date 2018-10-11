@@ -1,10 +1,14 @@
+
+
+
 const hogs = [
   {
     name: 'Mudblood',
     specialty: 'Mediocre magic',
     greased: false,
     'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water': 2.0,
-    'highest medal achieved': 'bronze'
+    'highest medal achieved': 'bronze',
+    img:"/Users/andrewlindner/Documents/Flatiron/Labs/Module4/Week1/hogwarts-nyc-web-080618/src/hog-imgs/cherub.jpg"
   },
   {
     name: 'Porkchop',
