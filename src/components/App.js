@@ -6,6 +6,7 @@ import Container from './Container'
 import hogs from '../porkers_data';
 
 let filterGreased = false;
+let originalHogs = [...hogs];
 
 class App extends Component {
   constructor(props){
@@ -19,7 +20,7 @@ class App extends Component {
   handleOnSelect = event => {
     let sorted;
     if (event.target.value === "none") {
-      sorted = this.state.hogs
+      sorted = originalHogs
     } else if (event.target.value === "name") {
       sorted = this.state.hogs.sort((a, b) => {
         return a.name.localeCompare(b.name)
@@ -32,7 +33,6 @@ class App extends Component {
     this.setState({
       sortedHogs: sorted
     })
-
   }
 
   handleOnClick = event => {
