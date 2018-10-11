@@ -59,7 +59,7 @@ export default class Hog extends Component {
       <h1> {this.props.name}</h1>
       <img
       onClick = {this.handleOnClick}
-      src={require(`./hog-imgs/${this.props.name.toLowerCase().replace(/ /g,"_")}.jpg`)}/>
+      src={require(`../hog-imgs/${this.props.name.toLowerCase().replace(/ /g,"_")}.jpg`)}/>
       {this.state.isClicked? <HogDetails greased = {this.props.greased} specialty = {this.props.specialty}/>: <div></div>}
       {this.state.isHide? <button onClick = {this.hide}>un-Hide</button>:<button onClick = {this.hide}>Hide</button>}
       </div>
