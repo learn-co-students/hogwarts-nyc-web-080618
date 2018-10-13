@@ -3,7 +3,7 @@ import '../App.css';
 import Nav from './Nav'
 import hogs from '../porkers_data';
 import HogCollection from './HogCollection'
-// import {Button} from 'semantic-ui-react'
+import Search from 'react-search'
 
 class App extends Component {
 
@@ -37,10 +37,29 @@ class App extends Component {
     })
   }
 
+  handleSearch = (event) => {
+    if (event.target.value !== ""){
+      let filterHog = this.state.allHog.filter(hog => {
+        return hog.name.toLowerCase().startsWith(event.target.value.toLowerCase())
+      })
+      this.setState({
+        allHog: filterHog
+      })
+    } else {
+      this.setState({
+        allHog: hogs
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <Nav />
+        <br />
+        Search Hog <input type="text" id="searchHog" onChange={this.handleSearch}/>
+        <br />
+        <br />
         <button value="name" className="ui blue basic button" onClick={this.handleSort}>Sort By Name</button>
         <button value="weight" className="ui red blue button" onClick={this.handleSort}>Sort By Weight</button>
         <button value="greased" className="ui green basic button" onClick={this.handleSort}>If Greased</button>

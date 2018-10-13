@@ -35,7 +35,7 @@ export default class HogCard extends Component {
 
   render() {
     return (
-      <div className="ui eight wide column, ui special card">
+      <div className="ui eight wide column, ui card">
         <h4>{this.props.name}</h4>
         <img
           alt=""
